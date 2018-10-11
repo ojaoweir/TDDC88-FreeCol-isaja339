@@ -34,7 +34,7 @@ import net.sf.freecol.util.test.FreeColTestCase;
 // sending email to krigy #pranked
 public class SoundTest extends FreeColTestCase {
 
-    private SoundPlayer soundPlayer = null;
+    private Sounder soundPlayer = null;
 
     @Override
     public void setUp() {
@@ -66,7 +66,7 @@ public class SoundTest extends FreeColTestCase {
     private void playSound(String id) {
         File file = ResourceManager.getAudio(id);
         assertNotNull("No sound resource: " + id, file);
-        try {
+        try { //Just play osv 
             soundPlayer.playOnce(file);
             try { // Just play the beginning of the sound to check it works
                 Thread.sleep(100);
